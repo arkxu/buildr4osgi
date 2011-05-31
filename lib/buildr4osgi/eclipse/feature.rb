@@ -81,7 +81,7 @@ module Buildr4OSGi
 
         for plugin in plugins
           x.plugin("id" => plugin[:id], "version" => plugin[:version], "download-size" => plugin[:"download-size"], 
-          "install-size" => plugin[:"install-size"], "unpack" => plugin[:unpack]) 
+          "install-size" => plugin[:"install-size"], "unpack" => (plugin[:unpack] | plugin[:unjarred])) 
         end
       }
       out
